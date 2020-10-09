@@ -1,0 +1,37 @@
+{
+  "workbench.colorCustomizations": {
+    "titleBar.activeForeground": "#15202b",
+    "titleBar.inactiveForeground": "#15202b99",
+    "titleBar.activeBackground": "#9c827d",
+    "titleBar.inactiveBackground": "#9c827d99",
+    "activityBar.activeBackground": "#b29e9a",
+    "activityBar.activeBorder": "#cfefd5",
+    "activityBar.background": "#b29e9a",
+    "activityBar.foreground": "#15202b",
+    "activityBar.inactiveForeground": "#15202b99",
+    "activityBarBadge.background": "#cfefd5",
+    "activityBarBadge.foreground": "#15202b",
+    "statusBar.background": "#9c827d",
+    "statusBar.foreground": "#15202b",
+    "statusBarItem.hoverBackground": "#836863"
+  },
+  // These are all my auto-save configs
+  "editor.formatOnSave": true,
+  // turn it off for JS and JSX, we will do this via eslint
+  "[javascript]": {
+    "editor.formatOnSave": false
+  },
+  "[javascriptreact]": {
+    "editor.formatOnSave": false
+  },
+  // tell the ESLint plugin to run on save
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
+  // Optional BUT IMPORTANT: If you have the prettier extension enabled for other languages like CSS and HTML, turn it off for JS since we are doing it through Eslint already
+  "prettier.disableLanguages": [
+    "javascript",
+    "javascriptreact"
+  ],
+  "peacock.color": "#9c827d",
+}
