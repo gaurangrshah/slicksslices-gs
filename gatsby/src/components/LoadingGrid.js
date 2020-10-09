@@ -1,12 +1,12 @@
-import React from 'react';
-import { ItemsGrid, ItemStyles } from '../styles/Grids';
+import React from "react";
+import { ItemsGrid, ItemStyles } from "../styles/Grids";
 
 export default function LoadingGrid({ count }) {
   return (
     <ItemsGrid>
       {/* make an empty array using the value from count */}
       {Array.from({ length: count }, (_, i) => (
-        <ItemStyles key={i}>
+        <ItemStyles key={`loader-${i}`}>
           <p>
             <span className="mark">Loading...</span>
           </p>

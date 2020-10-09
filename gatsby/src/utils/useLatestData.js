@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 const gql = String.raw; // fakes GQL in vscode providing syntax highlighting
 
@@ -22,12 +22,12 @@ export default function useLatestData() {
   const [slicemasters, setSlicemasters] = useState();
   // Use a side effect to fetch he data from the graphql endpoint
   useEffect(function () {
-    console.log('FETCHING DATA');
+    // console.log('FETCHING DATA');
     // when the component loads, fetch the data
     fetch(process.env.GATSBY_GRAPHQL_ENDPOINT, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
         query: gql`
@@ -54,7 +54,7 @@ export default function useLatestData() {
       })
       .catch((err) => {
         // check for errors
-        console.log('err', err);
+        console.log("err", err);
       });
   }, []);
   return {

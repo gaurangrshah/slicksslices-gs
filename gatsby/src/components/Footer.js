@@ -1,9 +1,9 @@
-import React from 'react';
+import React from "react";
 
-const Footer = ({ companyName = 'Company Name' }) => (
+const Footer = ({ companyName = "Company Name" }) => (
   <footer>
-    <p>
-      {companyName} &copy; {new Date().getFullYear()}{' '}
+    <p className="center">
+      {companyName} &copy; {new Date().getFullYear()}{" "}
     </p>
   </footer>
 );

@@ -1,9 +1,9 @@
-import React from 'react';
-import { graphql, Link } from 'gatsby';
-import Img from 'gatsby-image';
-import styled from 'styled-components';
-import SEO from '../components/SEO';
-import Pagination from '../components/pagination';
+import React from "react";
+import { graphql, Link } from "gatsby";
+import Img from "gatsby-image";
+import styled from "styled-components";
+import SEO from "../components/SEO";
+import Pagination from "../components/pagination";
 
 const SlicemasterGrid = styled.div`
   display: grid;

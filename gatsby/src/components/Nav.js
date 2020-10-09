@@ -1,22 +1,22 @@
-import React from 'react';
-import styled from 'styled-components';
-import { Link } from 'gatsby';
-import Logo from './Logo';
+import React from "react";
+import styled from "styled-components";
+import { Link } from "gatsby";
+import Logo from "./Logo";
 
 const paths = [
-  { path: '/', label: 'Hot Now' },
+  { path: "/", label: "Hot Now" },
   // { path: '/beers', label: 'Beers' },
-  { path: '/pizzas', label: 'Pizza Menu' },
-  { path: '/', label: <Logo /> },
-  { path: '/slice-masters', label: 'SliceMasters' },
-  { path: '/order', label: 'Order Ahead' },
+  { path: "/pizzas", label: "Pizza Menu" },
+  { path: "/", label: <Logo />, className: "logo-item" },
+  { path: "/slice-masters", label: "SliceMasters" },
+  { path: "/order", label: "Order Ahead" },
 ];
 
 const Nav = () => (
   <NavStyles>
     <ul>
-      {paths.map((path, i) => (
-        <NavLink key={i} path={path?.path} label={path?.label} />
+      {paths.map(({ path, label, ...rest }, i) => (
+        <NavLink key={i} path={path} label={label} {...rest} />
       ))}
     </ul>
   </NavStyles>
@@ -24,8 +24,8 @@ const Nav = () => (
 
 export default Nav;
 
-const NavLink = ({ path, label }) => (
-  <li>
+const NavLink = ({ path, label, ...rest }) => (
+  <li {...rest}>
     <Link to={path}>{label}</Link>
   </li>
 );
@@ -66,8 +66,36 @@ const NavStyles = styled.nav`
   a {
     font-size: 3rem;
     text-decoration: none;
+    display: block;
     &:hover {
       color: var(--red);
+    }
+    @media (max-width: 800px) {
+      font-size: 2rem;
+    }
+  }
+  @media (max-width: 600px) {
+    --columns: 4;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--grey);
+    padding-bottom: 2px;
+    ul {
+      grid-template-rows: auto auto;
+      grid-template-columns: repeat(var(--columns), 1fr);
+    }
+    .logo-item {
+      order: 0;
+      grid-column: 1 / -1;
+      justify-items: center;
+    }
+    .logo {
+      transform: none;
+    }
+  }
+  @media (max-width: 500px) {
+    --columns: 2;
+    .logo {
+      transform: none;
     }
   }
 `;

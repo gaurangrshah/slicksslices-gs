@@ -1,11 +1,11 @@
-import React from 'react';
-import { ItemsGrid, ItemStyles } from './Grids';
+import React from "react";
+import { ItemsGrid, ItemStyles } from "./Grids";
 
 export default function ItemGrid({ items }) {
   return (
     <ItemsGrid>
       {items.map((item) => (
-        <ItemStyles>
+        <ItemStyles key={item._id}>
           <p>
             <span className="mark">{item.name}</span>
           </p>
@@ -17,7 +17,7 @@ export default function ItemGrid({ items }) {
             style={{
               // show low quality image placeholder via sanity:
               background: `url(${item.image.asset.metadata.lqip})`,
-              backgroundSize: 'cover',
+              backgroundSize: "cover",
             }}
           />
         </ItemStyles>
